@@ -9,3 +9,14 @@ body[class*="show-custom-field-"] .public-user-field {
 .admin-config-area-card__content label {
   white-space: nowrap;
 }
+
+// Reduce gap between sidebar and form fields
+.admin-config-area-card__content-wrapper {
+  gap: 1rem !important;
+}
+
+// Make the sidebar narrower
+.admin-config-area-card__content-sidebar {
+  flex: 0 0 150px !important;
+  max-width: 150px !important;
+}
