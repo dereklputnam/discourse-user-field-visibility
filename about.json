@@ -1,0 +1,23 @@
+{
+  "name": "company-field-visibility",
+  "about_url": null,
+  "license_url": null,
+  "assets": {},
+  "color_schemes": {},
+  "modifiers": {},
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-theme-creator-and-theme-cli-to-start-building-a-discourse-theme/108444",
+  "settings": [
+    {
+      "name": "allowed_group_name",
+      "type": "string",
+      "default": "netwrix_employees",
+      "description": "The name of the group that can see the company field"
+    },
+    {
+      "name": "field_label",
+      "type": "string",
+      "default": "Company",
+      "description": "The label to display for the company field"
+    }
+  ]
+}
