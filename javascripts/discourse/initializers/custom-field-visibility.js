@@ -5,7 +5,6 @@ export default {
 
   initialize(container) {
     console.log("[Custom Field Visibility] Initializer starting...");
-    const siteSettings = container.lookup("service:site-settings");
 
     withPluginApi("0.8", (api) => {
       // Get current user
@@ -17,23 +16,14 @@ export default {
         return;
       }
 
-      // Get settings - try different possible prefixes
-      let allowedGroupName = siteSettings.allowed_group_name;
-      let customFieldName = siteSettings.custom_field_name;
-
-      // Try with theme name prefix if not found
-      if (!allowedGroupName) {
-        allowedGroupName = siteSettings.custom_field_visibility_allowed_group_name;
-      }
-      if (!customFieldName) {
-        customFieldName = siteSettings.custom_field_visibility_custom_field_name;
-      }
+      // Get settings from global settings object (available in theme JavaScript)
+      const allowedGroupName = settings.allowed_group_name;
+      const customFieldName = settings.custom_field_name;
 
       console.log("[Custom Field Visibility] Settings:", {
         allowedGroupName,
         customFieldName,
-        allSettings: Object.keys(siteSettings).filter(k => k.includes('custom_field') || k.includes('allowed_group')),
-        allKeys: Object.keys(siteSettings).sort()
+        settingsObject: typeof settings !== 'undefined' ? 'available' : 'not available'
       });
 
       if (!allowedGroupName || !customFieldName) {
