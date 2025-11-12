@@ -15,9 +15,9 @@ export default {
         return;
       }
 
-      // Get settings
-      const allowedGroupName = siteSettings.custom_field_visibility_allowed_group_name;
-      const customFieldName = siteSettings.custom_field_visibility_custom_field_name;
+      // Get settings - theme settings are accessed with theme name prefix
+      const allowedGroupName = siteSettings.allowed_group_name;
+      const customFieldName = siteSettings.custom_field_name;
 
       if (!allowedGroupName || !customFieldName) {
         return;
