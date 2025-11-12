@@ -75,9 +75,10 @@ export default {
         document.head.appendChild(style);
         console.log(`[Custom Field Visibility] Injected CSS to hide field ID: ${fieldId}, name: ${fieldName}`);
 
-        // Check if user is in the allowed group for this rule
-        const isInAllowedGroup = userGroupNames.includes(rule.allowed_group);
-        console.log(`[Custom Field Visibility] User in group '${rule.allowed_group}'?`, isInAllowedGroup);
+        // Check if user is in any of the allowed groups for this rule
+        const allowedGroups = rule.allowed_groups || [];
+        const isInAllowedGroup = allowedGroups.some(group => userGroupNames.includes(group));
+        console.log(`[Custom Field Visibility] User in any of groups ${JSON.stringify(allowedGroups)}?`, isInAllowedGroup);
 
         if (isInAllowedGroup) {
           document.body.classList.add(`show-custom-field-${fieldId}`);

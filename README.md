@@ -39,17 +39,22 @@ After installation, configure visibility rules:
 
 ```yaml
 - field_name: company
-  allowed_group: netwrix_employees
+  allowed_groups:
+    - netwrix_employees
+    - admins
 - field_name: department
-  allowed_group: staff
+  allowed_groups:
+    - staff
+    - managers
 - field_name: employee_id
-  allowed_group: admins
+  allowed_groups:
+    - admins
 ```
 
 ### Rule Properties
 
 - **field_name**: The exact name of the custom user field (case-insensitive)
-- **allowed_group**: The name of the group that can see this field
+- **allowed_groups**: Array of group names that can see this field. Users in ANY of these groups will see the field.
 
 ## Requirements
 
