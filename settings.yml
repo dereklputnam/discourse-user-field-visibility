@@ -1,9 +1,6 @@
 field_visibility_rules:
   type: objects
-  default:
-    - field_name: company
-      allowed_groups:
-        - netwrix_employees
+  default: []
   description: "List of field visibility rules. Each rule defines which groups can see which custom user field."
   schema:
     name: field_visibility_rule
