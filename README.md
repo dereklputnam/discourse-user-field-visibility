@@ -42,6 +42,7 @@ After installation, configure visibility rules:
 Each rule should have:
 - **Field Name**: The exact name of the custom user field (case-insensitive)
 - **Allowed Groups**: Comma-separated list of group names (e.g., `employees, admins, managers`)
+  - To find available group names: Go to **Admin > Groups** and use the exact group name as shown
 
 **Example configurations:**
 
