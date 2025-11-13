@@ -14,5 +14,6 @@ field_visibility_rules:
           min_length: 1
       allowed_groups:
         type: groups
+        default: []
         label: "Allowed Groups"
         description: "Select groups that can see this field"
